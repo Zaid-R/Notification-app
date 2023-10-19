@@ -4,56 +4,73 @@ import 'notification_service.dart';
 
 class NotifiedProvider extends ChangeNotifier {
   bool _hasNotifications;
-  NotifiedProvider() : _hasNotifications = false;
-  
-  get hasNotifications => _hasNotifications;
+  final NotifyHelper _notificationHelper;
+  NotifiedProvider()
+      : _notificationHelper = NotifyHelper(),
+        _hasNotifications = false {
+    _notificationHelper.initializeNotification();
+    _checkNotifications();
+  }
 
-  checkNotifications(NotifyHelper notifyHelper) async {
-    notifyHelper.flutterLocalNotificationsPlugin
+  bool get hasNotifications => _hasNotifications;
+
+  void _checkNotifications() {
+    _notificationHelper.flutterLocalNotificationsPlugin
         .pendingNotificationRequests()
-        .then((value) {
-      _hasNotifications = value.isEmpty;
+        .then((list) {
+      _hasNotifications = list.isNotEmpty;
+      print('List length : ${list.length}');
       notifyListeners();
+      print("_hasNotifications : $_hasNotifications");
     });
   }
 
-  void cancelAllNotifications(NotifyHelper notifyHelper){
-    notifyHelper.cancelAllNotifications();
-    checkNotifications(notifyHelper);
+  void _setHasNotifications(bool value){
+      _hasNotifications = value;
+      notifyListeners();
   }
 
-  void setNotifications(NotifyHelper notifyHelper) {
+  int cancelations = 0;
+  int pendings = 0;
+  void cancelAllNotifications() {
+    cancelations++;
+    print('Cancelations : $cancelations');
+    _notificationHelper.cancelAllNotifications();
+    _setHasNotifications(false);
+  }
+
+  void setNotifications() {
+    pendings++;
     //Test notification
-    _setSundayAndTuesdayNotification(notifyHelper, 13, 01, 'Test 2');
+    _setSundayAndTuesdayNotification(11, 36, 'Test 2');
     // _setSundayAndTuesdayNotification(notifyHelper,3, 47, 'Test 1');
     //Start for Sunday and Tuesday
-    _setSundayAndTuesdayNotification(notifyHelper, 15, 00, 'Ice Breaking');
+    _setSundayAndTuesdayNotification(15, 00, 'Ice Breaking');
     //Full English
-    _setSundayAndTuesdayNotification(notifyHelper, 15, 10, 'Full English ');
+    _setSundayAndTuesdayNotification(15, 10, 'Full English ');
     //Break
-    _setSundayAndTuesdayNotification(notifyHelper, 16, 25, 'Break ');
+    _setSundayAndTuesdayNotification(16, 25, 'Break ');
     //Full Arabic
-    _setSundayAndTuesdayNotification(notifyHelper, 16, 35, 'Full Arabic ');
+    _setSundayAndTuesdayNotification(16, 35, 'Full Arabic ');
     //The end of the session
-    _setSundayAndTuesdayNotification(
-        notifyHelper, 17, 00, 'The end of the session ');
-    checkNotifications(notifyHelper);
+    _setSundayAndTuesdayNotification(17, 00, 'The end of the session ');
+    print('Pendings : $pendings');
+    _setHasNotifications(true);
   }
 
-  void _setSundayAndTuesdayNotification(
-    NotifyHelper notifyHelper,
+  Future<void> _setSundayAndTuesdayNotification(
     int hour,
     int minute,
     String title,
-  ) {
+  ) async {
     //Test notification
-    // notifyHelper.scheduleNotification(
-    //     hour, minute, '10/2/2023', title, DateTimeComponents.dayOfWeekAndTime);
+    _notificationHelper.scheduleNotification(
+        hour, minute, '10/12/2023', title, DateTimeComponents.dayOfWeekAndTime);
     //Sunday
-    notifyHelper.scheduleNotification(
-        hour, minute, '10/1/2023', title, DateTimeComponents.dayOfWeekAndTime);
-    //Tuesday
-    notifyHelper.scheduleNotification(
-        hour, minute, '10/3/2023', title, DateTimeComponents.dayOfWeekAndTime);
+    // notifyHelper.scheduleNotification(
+    //     hour, minute, '10/1/2023', title, DateTimeComponents.dayOfWeekAndTime);
+    // //Tuesday
+    // notifyHelper.scheduleNotification(
+    //     hour, minute, '10/3/2023', title, DateTimeComponents.dayOfWeekAndTime);
   }
 }
