@@ -19,9 +19,7 @@ class NotifiedProvider extends ChangeNotifier {
         .pendingNotificationRequests()
         .then((list) {
       _hasNotifications = list.isNotEmpty;
-      print('List length : ${list.length}');
       notifyListeners();
-      print("_hasNotifications : $_hasNotifications");
     });
   }
 
@@ -30,20 +28,12 @@ class NotifiedProvider extends ChangeNotifier {
       notifyListeners();
   }
 
-  int cancelations = 0;
-  int pendings = 0;
   void cancelAllNotifications() {
-    cancelations++;
-    print('Cancelations : $cancelations');
     _notificationHelper.cancelAllNotifications();
     _setHasNotifications(false);
   }
 
   void setNotifications() {
-    pendings++;
-    //Test notification
-    _setSundayAndTuesdayNotification(11, 36, 'Test 2');
-    // _setSundayAndTuesdayNotification(notifyHelper,3, 47, 'Test 1');
     //Start for Sunday and Tuesday
     _setSundayAndTuesdayNotification(15, 00, 'Ice Breaking');
     //Full English
@@ -54,7 +44,6 @@ class NotifiedProvider extends ChangeNotifier {
     _setSundayAndTuesdayNotification(16, 35, 'Full Arabic ');
     //The end of the session
     _setSundayAndTuesdayNotification(17, 00, 'The end of the session ');
-    print('Pendings : $pendings');
     _setHasNotifications(true);
   }
 
@@ -63,14 +52,11 @@ class NotifiedProvider extends ChangeNotifier {
     int minute,
     String title,
   ) async {
-    //Test notification
-    _notificationHelper.scheduleNotification(
-        hour, minute, '10/12/2023', title, DateTimeComponents.dayOfWeekAndTime);
     //Sunday
-    // notifyHelper.scheduleNotification(
-    //     hour, minute, '10/1/2023', title, DateTimeComponents.dayOfWeekAndTime);
-    // //Tuesday
-    // notifyHelper.scheduleNotification(
-    //     hour, minute, '10/3/2023', title, DateTimeComponents.dayOfWeekAndTime);
+    _notificationHelper.scheduleNotification(
+        hour, minute, '10/1/2023', title, DateTimeComponents.dayOfWeekAndTime);
+    //Tuesday
+    _notificationHelper.scheduleNotification(
+        hour, minute, '10/3/2023', title, DateTimeComponents.dayOfWeekAndTime);
   }
 }
