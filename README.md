@@ -1,16 +1,25 @@
-# course_notification_app
+# Course notifications
+## Custom notification app
 
-A new Flutter project.
+![GitHub last commit (by committer)](https://img.shields.io/github/last-commit/Zaid-R/Notification-app)
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+Course notifications is a simple app I made since I've taken a course to improve speaking skill and the class was divided into sections 
+(as you see in the photo below) so I need something to notify us when every section start and when the class finished.
 
-A few resources to get you started if this is your first Flutter project:
+![Shedule](https://drive.google.com/file/d/1f1TC8e5zUXt77H-Y-_mytoPqlcnhEZb7/view)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Features
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Custom notification sound (noisy enough to alert you ) 
+- Ability to know if the notifications are on through showing Stop button
+
+![app page](https://drive.google.com/file/d/1OJiYxSSQXrPtnA4tNUfGyUPS_7Lix2Nu/view) 
+
+
+## Packages
+- flutter_local_notifications
+- flutter_timezone
+- intl
+- provider
+- timezone
