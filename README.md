@@ -7,14 +7,18 @@
 Course notifications is a simple app I made since I've taken a course to improve speaking skill and the class was divided into sections 
 (as you see in the photo below) so I need something to notify us when every section start and when the class finished.
 
-![Shedule](https://drive.google.com/uc?export=view&id=1f1TC8e5zUXt77H-Y-_mytoPqlcnhEZb7)
+<a href="https://drive.google.com/uc?export=view&id=1f1TC8e5zUXt77H-Y-_mytoPqlcnhEZb7">
+<img src="https://drive.google.com/uc?export=view&id=1f1TC8e5zUXt77H-Y-_mytoPqlcnhEZb7" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
+
 
 ## Features
 
 - Custom notification sound (noisy enough to alert you ) 
 - Ability to know if the notifications are on through showing Stop button
 
-![app page](https://drive.google.com/uc?export=view&id=1f1TC8e5zUXt77H-Y-_mytoPqlcnhEZb7) 
+<a href="https://drive.google.com/uc?export=view&id=1OJiYxSSQXrPtnA4tNUfGyUPS_7Lix2Nu">
+<img src="https://drive.google.com/uc?export=view&id=1OJiYxSSQXrPtnA4tNUfGyUPS_7Lix2Nu" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
+
 
 
 ## Packages
