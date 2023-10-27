@@ -1,4 +1,4 @@
-# Course notifications
+# Course Notifications
 ## Custom notification app
 
 ![GitHub last commit (by committer)](https://img.shields.io/github/last-commit/Zaid-R/Notification-app)
