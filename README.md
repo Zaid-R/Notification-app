@@ -1,5 +1,8 @@
 # Course Notifications
-## Custom notification app
+ Custom notification app
+ <p align="center">
+<img src="https://drive.google.com/uc?export=view&id=1xovwuFrtRdtIYqasWuff7v-lvSmzOvUm">
+</p>
 
 ![GitHub last commit (by committer)](https://img.shields.io/github/last-commit/Zaid-R/Notification-app)
 
