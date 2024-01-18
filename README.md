@@ -32,5 +32,5 @@ Course notifications is a simple app I made since I've taken a course to improve
 - timezone
 
 ##
-Let me know if you have any questions, and feel free to contribute.
+Let me know if you have any questions, and feel free to contribute.<br>
 If you liked my work, don’t forget to ⭐ star the repository to show your support.
