@@ -15,6 +15,8 @@ Course notifications is a simple app I made since I've taken a course to improve
 
 - Custom notification sound (noisy enough to alert you ) 
 - Ability to know if the notifications are on through showing Stop button
+- Clean code
+- OOP
 
 <a href="https://drive.google.com/uc?export=view&id=1xoD41y10SUf0SztzMzoOeSBrt1Vv8V1v">
 <img src="https://drive.google.com/uc?export=view&id=1xoD41y10SUf0SztzMzoOeSBrt1Vv8V1v" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
